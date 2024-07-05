@@ -1,9 +1,11 @@
-import React from 'react';
+import { Button } from "@mui/material";
+import React from "react";
 
 function SignIn() {
-  return (
-    <div></div>
-  )
+  function singInWithGoogle() {
+    
+  }
+  return <Button onClick={singInWithGoogle}>Login with Google account</Button>;
 }
 
-export default SignIn
+export default SignIn;
