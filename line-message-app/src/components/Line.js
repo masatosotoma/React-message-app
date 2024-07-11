@@ -4,7 +4,12 @@ import SendMessage from "./SendMessage.js";
 import SignOut from "./SignOut";
 
 function Line() {
-    return( <div>Line</div>)
+    
+  return (
+    <div>
+      <SignOut />
+    </div>
+  );
 }
 
 export default Line;
