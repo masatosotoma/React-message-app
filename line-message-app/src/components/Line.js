@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db, auth } from "../firebase.js";
 import SendMessage from "./SendMessage.js";
-// import SignOut from "./SignOut";
+import SignOut from "./SignOut";
 
 function Line() {
   const [messages, setMessages] = useState([]);
@@ -15,18 +15,23 @@ function Line() {
   }, []);
   return (
     <div>
-      {/* <SignOut /> */}
+      <SignOut />
       <div className="msgs">
         {messages.map(({ id, text, photoURL, uid }) => (
           <div>
-            <div>
+            <div
+              key={id}
+              className={`msg ${
+                uid === auth.currentUser.uid ? "setn" : "received"
+              }`}
+            >
               <img src={photoURL} alt="" />
               <p>{text}</p>
             </div>
           </div>
         ))}
       </div>
-      <SendMessage/>
+      <SendMessage />
     </div>
   );
 }
