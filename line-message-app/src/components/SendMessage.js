@@ -4,8 +4,8 @@ import firebase from "firebase/compat/app";
 import { Input } from "@mui/base";
 import SendIcon from "@mui/icons-material/Send";
 
-function SendMessage() {
-  const [message, setMessages] = useState("");
+function SendMessage({ scroll }) {
+  const [message, setMessage] = useState("");
   function sendMessage(e) {
     e.preventDefault();
 
@@ -17,7 +17,7 @@ function SendMessage() {
       uid,
       createdat: firebase.firestore.FieldValue.serverTimestamp,
     });
-    setMessages("");
+    setMessage("");
   }
   return (
     <div>
