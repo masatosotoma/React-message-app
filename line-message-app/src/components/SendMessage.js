@@ -24,6 +24,13 @@ function SendMessage() {
       <form onSubmit={sendMessage}>
         <div className="sendMsg">
           <Input
+            style={{
+              width: "78%",
+              fontSize: "15px",
+              fontWeight: "550",
+              marginLeft: "5px",
+              marginBottom: "-3px",
+            }}
             placeholder="Enter Message"
             type="text"
             value={message}
